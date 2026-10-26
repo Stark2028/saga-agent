@@ -1,4 +1,4 @@
-import type { ApproveRunRequest, BenchmarkResponse, ChaosConfig, CreateRunRequest, ErrorResponse, ForkRunRequest, RejectRunRequest, ReviseRfqRequest, RunTraceResponse } from '../types/saga';
+import type { AgentCapabilities, CompanyResponse, TaskCreateRequest, TaskContinueRequest, TaskRecordResponse, TaskResponse, ApproveRunRequest, BenchmarkResponse, ChaosConfig, CreateRunRequest, ErrorResponse, ForkRunRequest, RejectRunRequest, ReviseRfqRequest, RunTraceResponse } from '../types/saga';
 import { isRecord } from './format';
 
 export class ApiError extends Error {
@@ -53,6 +53,12 @@ export class SagaApi {
   fork(id: string, body: ForkRunRequest) { return this.request<RunTraceResponse>(`/api/runs/${encodeURIComponent(id)}/fork`, 'POST', body); }
   scenario(id: string, chaos_config: ChaosConfig = {}) { return this.request<RunTraceResponse>(`/api/chaos/scenarios/${encodeURIComponent(id)}`, 'POST', { chaos_config }); }
   benchmarks() { return this.request<BenchmarkResponse>('/api/chaos/benchmarks'); }
+  capabilities() { return this.request<AgentCapabilities>('/api/agent/capabilities'); }
+  company() { return this.request<CompanyResponse>('/api/company'); }
+  tasks() { return this.request<TaskRecordResponse[]>('/api/tasks'); }
+  task(id: string) { return this.request<TaskResponse>(`/api/tasks/${encodeURIComponent(id)}`); }
+  startTask(body: TaskCreateRequest) { return this.request<TaskResponse>('/api/tasks', 'POST', body); }
+  continueTask(id: string, body: TaskContinueRequest = {}) { return this.request<TaskResponse>(`/api/tasks/${encodeURIComponent(id)}/continue`, 'POST', body); }
 }
 
 export const api = new SagaApi();

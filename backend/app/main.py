@@ -8,6 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes_chaos import router as chaos_router
 from app.api.routes_runs import router as runs_router
+from app.api.routes_tasks import router as tasks_router
+from app.agent.company import seed_company
 from app.config import Settings
 from app.db.session import Database
 from app.engine.contracts import SagaError, SimulatedWorkerCrashError
@@ -24,6 +26,7 @@ def create_app(settings=None, database=None):
         db = database or Database(settings.database_url)
         await db.init()
         await seed(db)
+        await seed_company(db)
         app.state.runtime = Runtime(db, settings)
         try:
             yield
@@ -40,6 +43,7 @@ def create_app(settings=None, database=None):
     )
     app.include_router(runs_router)
     app.include_router(chaos_router)
+    app.include_router(tasks_router)
 
     @app.exception_handler(SagaError)
     async def saga_error(request: Request, error: SagaError):

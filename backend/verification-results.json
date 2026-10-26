@@ -1,16 +1,16 @@
 {
-  "date": "2026-10-26",
+  "date": "2026-10-27",
   "timezone": "Asia/Calcutta",
   "working_directory": "backend",
   "command": "..\\.venv\\Scripts\\python.exe -m pytest -q -W error --basetemp=.test-tmp-verified --junitxml=pytest-results.xml",
   "exit_code": 0,
-  "collected": 65,
-  "passed": 65,
+  "collected": 89,
+  "passed": 89,
   "failed": 0,
   "errors": 0,
   "skipped": 0,
   "warnings": 0,
-  "junit_duration_seconds": 43.381,
-  "pytest_summary": "65 passed in 43.38s",
+  "junit_duration_seconds": 130.971,
+  "pytest_summary": "89 passed in 130.98s (0:02:10)",
   "python": "3.12.10"
 }

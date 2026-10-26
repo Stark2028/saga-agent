@@ -17,3 +17,7 @@ The run header carries a contextual action panel: review, reconcile, resume, ins
 Connect the six steps with directional lines. Use a horizontal pipeline when its container exceeds 830px, and a vertical timeline below that width. Compensated history remains visible with a separate tone. A single short transition accompanies the current-action panel, and reduced-motion preferences disable it.
 
 At viewport widths of 760px or less, collapse the creation form after a trace loads and allow explicit reopening without losing input. Keep all five scenarios visible in a compact two-column grid; hide their supplementary descriptions while retaining the action names and active scenario instructions. Tables retain contained scrolling so financial values and record columns stay readable.
+
+## Task and company workspaces — 2026-10-27
+
+Keep the same typography, pine-green palette, semantic state colors and keyboard focus rules. The task workspace has an objective/source/mode form beside a task outcome, human approval, evidence checks and chronological observations. Show whether a real model was called. Clarification is an inline continuation of the same persisted task. Keep the company-record view separate and link to the durable trace rather than duplicating its diagnostics. Use one-column stacking with explicit zero-minimum grid tracks and wrapped record IDs on mobile.

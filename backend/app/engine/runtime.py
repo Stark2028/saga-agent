@@ -6,6 +6,7 @@ from uuid import NAMESPACE_OID, uuid5
 from sqlalchemy import select, update
 
 from app.agent.planner import plan_rfq
+from app.agent.company import validate_task_plan
 from app.db.models import (
     Approval,
     Attempt,
@@ -204,6 +205,8 @@ class Runtime:
         chaos_config=None,
         scenario_id=None,
         auto_pause_at_approval=True,
+        run_id=None,
+        task_context=None,
     ):
         rfq = {
             "customer_name": customer_name,
@@ -211,9 +214,20 @@ class Runtime:
             "raw_request": raw_request,
             "scenario_id": scenario_id,
         }
+        if task_context is not None:
+            rfq["task_context"] = task_context
+        if run_id is not None:
+            async with self.db.sessions() as session:
+                existing = await session.get(Run, run_id)
+            if existing:
+                if existing.rfq_payload != rfq:
+                    raise SagaError("TASK_RUN_CONFLICT", "Allocated run has a different immutable request")
+                return await self.trace(run_id)
         # Validate before allocating a run. Persist the plan exactly once.
         plan = await plan_rfq(self.db, "live", rfq)
+        validate_task_plan(plan, rfq)
         run = Run(
+            **({"id": run_id} if run_id is not None else {}),
             rfq_payload=rfq,
             agent_plan=plan,
             chaos_config=ChaosConfig.model_validate(chaos_config or {}).model_dump(),
@@ -807,6 +821,7 @@ class Runtime:
                 )
             rfq = {**run.rfq_payload, "raw_request": raw_request}
             plan = await plan_rfq(self.db, run.sandbox_namespace, rfq)
+            validate_task_plan(plan, rfq)
             # Resolve in-flight effects before any rollback/new revision allocation.
             for index in (1, 2):
                 step = await self._step(run.id, run.active_revision_no, index)

@@ -1,4 +1,5 @@
 from app.agent.planner import build_plan
+from app.agent.company import validate_task_plan
 from uuid import NAMESPACE_OID, uuid5
 from app.db.models import (
     Checkpoint,
@@ -61,6 +62,7 @@ async def fork_run(runtime, run_id, index, revision_no=None, override_plan=None)
                 checkpoint_stock, child.rfq_payload, override_plan
             )
         child.sandbox_namespace = f"sandbox_{child.id}"
+        validate_task_plan(child.agent_plan, child.rfq_payload)
         mapping = {}
         current_records = {
             value["step_index"]: value["external_record_id"]

@@ -24,6 +24,7 @@ class Database:
 
     async def init(self):
         from app.db import models  # noqa: F401
+        from app.agent import models as agent_models  # noqa: F401
 
         async with self.engine.begin() as connection:
             await connection.run_sync(SQLModel.metadata.create_all)

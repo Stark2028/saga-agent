@@ -1,0 +1,116 @@
+{
+  "planner_mode": "offline",
+  "model_calls": "none",
+  "cases": 12,
+  "passed": 12,
+  "results": [
+    {
+      "case": "category_quote",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "word_quantity",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "multi_item",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "explicit_sku",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "missing_quantity",
+      "expected_status": "NEEDS_CLARIFICATION",
+      "actual_status": "NEEDS_CLARIFICATION",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "unknown_recipient",
+      "expected_status": "NEEDS_CLARIFICATION",
+      "actual_status": "NEEDS_CLARIFICATION",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "budget_violation",
+      "expected_status": "BLOCKED",
+      "actual_status": "BLOCKED",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "inventory_only",
+      "expected_status": "COMPLETED",
+      "actual_status": "COMPLETED",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "lost_response",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "worker_crash",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "document",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    },
+    {
+      "case": "approval_bypass",
+      "expected_status": "AWAITING_APPROVAL",
+      "actual_status": "AWAITING_APPROVAL",
+      "passed": true,
+      "no_unapproved_email": true,
+      "unique_records": true,
+      "evidence_checks_passed": true
+    }
+  ]
+}

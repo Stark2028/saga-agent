@@ -7,5 +7,6 @@
 - [x] Phase 4: Final pytest verification, generated contracts and measured 100-case-per-runner benchmark handoff.
 - [x] Phase 5: Frontend Trace & Chaos Studio, five guided workflows, generated TypeScript contracts and browser integration verification.
 - [x] Visual refinement: readable typography, contextual next action, connected step timeline, mobile form disclosure and responsive/keyboard checks.
+- [x] Phase 6: Goal-driven quotation/inventory worker, configurable OpenAI interpretation, labeled offline parser, persisted company context, clarification, bounded recovery, verified outcomes and company workspace.
 
 See MEMORY.md for exact verification results and BUGS.md for remaining limitations.

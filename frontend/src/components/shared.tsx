@@ -4,8 +4,8 @@ import { label } from '../lib/format';
 
 export function StatusBadge({ status }: { status: string }) {
   const tone = ['COMPLETED', 'COMMITTED', 'APPROVED', 'COMPENSATED', 'COMMITTED_CONVERTED', 'SENT'].includes(status) ? 'success'
-    : ['FAILED_NEEDS_HUMAN', 'COMPENSATION_FAILED', 'FAILED_TERMINAL', 'REJECTED'].includes(status) ? 'danger'
-    : ['OUTCOME_UNKNOWN', 'RECONCILING', 'AWAITING_APPROVAL', 'IN_FLIGHT', 'DISPATCHING_FINAL', 'COMPENSATING'].includes(status) ? 'warning' : 'neutral';
+    : ['FAILED_NEEDS_HUMAN', 'FAILED_VERIFICATION', 'BLOCKED', 'COMPENSATION_FAILED', 'FAILED_TERMINAL', 'REJECTED'].includes(status) ? 'danger'
+    : ['NEEDS_CLARIFICATION', 'PLANNING', 'OUTCOME_UNKNOWN', 'RECONCILING', 'AWAITING_APPROVAL', 'IN_FLIGHT', 'DISPATCHING_FINAL', 'COMPENSATING'].includes(status) ? 'warning' : 'neutral';
   return <span className={`status-badge ${tone}`} title={status}><span aria-hidden="true" className="status-dot" />{label(status)}</span>;
 }
 

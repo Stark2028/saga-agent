@@ -64,7 +64,7 @@ async function run() {
       await page.getByRole('button', { name: new RegExp(`Run guided scenario ${index}:`) }).click();
       await expect.poll(() => new URL(page.url()).searchParams.get('run')).not.toBe(before);
     };
-    await page.goto(appUrl);
+    await page.goto(`${appUrl}/studio`);
     await step('studio and persisted benchmark render', async () => {
       await expect(page.getByRole('heading', { name: 'Trace & Chaos Studio' })).toBeVisible();
       await expect(page.getByRole('heading', { name: 'Fault-injection benchmark' })).toBeVisible();
@@ -222,8 +222,79 @@ async function run() {
       await expect(page.getByText(/INVALID_CREDENTIALS/)).toBeVisible();
       await expect(page.getByText('Awaiting approval').first()).toBeVisible();
     });
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(appUrl);
+    await step('task worker exposes honest planner modes and a business objective', async () => {
+      await expect(page.getByRole('heading', { name: /Give it a goal/ })).toBeVisible();
+      await expect(page.getByLabel('Planner mode')).toHaveValue('offline');
+      await expect(page.getByText('No model is called.')).toBeVisible();
+    });
+    await page.getByText('Recovery demonstration', { exact: true }).click();
+    await page.getByLabel('Fault to inject').selectOption('lost');
+    await page.getByRole('button', { name: 'Execute task', exact: true }).click();
+    await step('natural-language goal executes and reconciles before approval', async () => {
+      await expect(page.getByText('Awaiting approval').first()).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Resume and verify' })).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Record verification' })).toBeVisible();
+      await expect(page.getByRole('button', { name: 'Approve & dispatch' })).toBeEnabled();
+      if (!new URL(page.url()).searchParams.get('task')) throw new Error('Task was not deep linked');
+    });
+    const taskId = new URL(page.url()).searchParams.get('task');
+    await page.evaluate(() => globalThis.scrollTo(0, 0));
+    await page.screenshot({ path: path.join(dir, 'task-worker.png'), fullPage: true });
+    await page.screenshot({ path: path.join(dir, 'task-worker-viewport.png') });
+    await page.getByRole('button', { name: 'Approve & dispatch' }).click();
+    await step('approval produces a verified completion summary', async () => {
+      await expect(page.getByText('Completed', { exact: true }).first()).toBeVisible();
+      await expect(page.getByText('One dispatch matches the consumed approval')).toBeVisible();
+      await expect(page.locator('.check-failed')).toHaveCount(0);
+      const task = await (await fetch(`${apiUrl}/api/tasks/${taskId}`)).json();
+      if (task.task.status !== 'COMPLETED' || task.checks.some(check => !check.passed)) throw new Error('Completion was not verified');
+    });
+    await page.goto(`${appUrl}/company`);
+    await step('company workspace independently shows created business records', async () => {
+      await expect(page.getByRole('heading', { name: 'Company workspace', exact: true })).toBeVisible();
+      await expect(page.getByText('procurement@acme.example.test').first()).toBeVisible();
+      await expect(page.getByText('Sent', { exact: true }).first()).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Approved catalogue & stock' })).toBeVisible();
+    });
+    await page.screenshot({ path: path.join(dir, 'company-workspace.png'), fullPage: true });
+    await page.goto(appUrl);
+    await page.getByRole('button', { name: 'Ask for clarification', exact: true }).click();
+    await page.getByRole('button', { name: 'Execute task', exact: true }).click();
+    await step('ambiguous goal pauses for clarification without a run', async () => {
+      await expect(page.getByText('Needs clarification', { exact: true }).first()).toBeVisible();
+      const id = new URL(page.url()).searchParams.get('task');
+      const task = await (await fetch(`${apiUrl}/api/tasks/${id}`)).json();
+      if (task.task.run_id !== null) throw new Error('Ambiguous task created effects');
+    });
+    await page.getByLabel('Your clarification', { exact: true }).fill('3 keyboards under INR 10000');
+    await page.getByRole('button', { name: 'Continue task', exact: true }).click();
+    await step('clarification resumes the same task safely', async () => {
+      await expect(page.getByText('Awaiting approval').first()).toBeVisible();
+      await expect(page.getByRole('button', { name: 'Approve & dispatch' })).toBeEnabled();
+    });
+    await page.goto(appUrl);
+    await page.getByLabel('Your objective', { exact: true }).fill('Prepare the quote requested in the attached RFQ');
+    await page.getByText('Add an RFQ document', { exact: true }).click();
+    await page.getByLabel('Upload text or Markdown').setInputFiles({ name: 'customer-rfq.txt', mimeType: 'text/plain', buffer: Buffer.from('Customer: Acme\nPlease quote 2 monitors under INR 5000.') });
+    await page.getByRole('button', { name: 'Execute task', exact: true }).click();
+    await step('uploaded RFQ is interpreted with persisted source provenance', async () => {
+      await expect(page.getByText('Awaiting approval').first()).toBeVisible();
+      await expect(page.getByText('Source provenance · customer-rfq.txt')).toBeVisible();
+    });
+    await page.setViewportSize({ width: 375, height: 812 });
+    await step('task workspace is contained and usable on mobile', async () => {
+      if (await page.evaluate(() => globalThis.document.documentElement.scrollWidth > globalThis.innerWidth + 1)) {
+        await page.screenshot({ path: path.join(dir, 'task-worker-mobile-error.png'), fullPage: true });
+        const offenders = await page.evaluate(() => [...globalThis.document.querySelectorAll('main *')].filter(element => element.getBoundingClientRect().right > globalThis.innerWidth + 1).slice(0, 12).map(element => ({ tag: element.tagName, class: element.className, width: element.getBoundingClientRect().width, text: element.textContent.slice(0, 90) })));
+        throw new Error(`Task workspace overflows: ${JSON.stringify(offenders)}`);
+      }
+      await expect(page.getByLabel('Your objective')).toBeVisible();
+    });
+    await page.screenshot({ path: path.join(dir, 'task-worker-mobile.png'), fullPage: true });
     if (pageErrors.length) throw new Error(`Browser errors: ${pageErrors.join('; ')}`);
-    await writeFile(path.join(dir, 'results.json'), JSON.stringify({ assertions, apiUrl, appUrl, screenshots: ['desktop.png', 'desktop-viewport.png', 'mobile.png', 'mobile-viewport.png', 'mobile-trace.png', 'tablet.png', 'uncertain.png'] }, null, 2));
+    await writeFile(path.join(dir, 'results.json'), JSON.stringify({ assertions, apiUrl, appUrl, screenshots: ['desktop.png', 'desktop-viewport.png', 'mobile.png', 'mobile-viewport.png', 'mobile-trace.png', 'tablet.png', 'uncertain.png', 'task-worker.png', 'task-worker-viewport.png', 'company-workspace.png', 'task-worker-mobile.png'] }, null, 2));
     console.log(`Integration: ${assertions} scenarios and interaction checks passed. Evidence: ${dir}`);
   } finally { await browser.close(); }
 }

@@ -312,6 +312,16 @@ To back resume claims with reproducible experimental evidence, `run_benchmarks.p
   - [x] P5.3: Verify TypeScript, lint, production build, component tests, browser integration and backend pytest with warnings as errors.
   - [x] P5.4: Refine typography, contextual action guidance, connected trace states and mobile layout; verify eight component/API tests and 16 browser checks. See frontend/VERIFICATION.md for the latest frontend record.
 
+## Phase 6: Goal-driven task worker (implemented 2026-10-27)
+
+- [x] Add a bounded natural-language quotation/inventory controller over the existing runtime, with explicitly labeled offline parsing and optional OpenAI structured interpretation.
+- [x] Persist task goals, text-source hashes, clarifications, observations, leased ownership, allocated run IDs and immutable company-policy snapshots.
+- [x] Select approved stock, request clarification on ambiguity, preserve frozen budgets through revisions/forks, and recover uncertain/crashed boundaries within fixed bounds.
+- [x] Require the existing authenticated approval gate and independently verify quote, hold, email and finalization records before reporting completion.
+- [x] Add task/company APIs, a goal workspace, an independent company-record view, typed contracts, 12 isolated offline evaluations and expanded regression/browser coverage.
+
+See docs/AGENT_WORKER.md for scope/configuration and docs/AGENT_VERIFICATION.md for exact measured results. OpenAI live execution requires user-configured credentials and remains unverified in the offline evidence. The underlying low-level planner remains deterministic; the new interpreter/controller is a separate layer.
+
 ## V2 precedence and implementation clarifications
 
 ARCHITECTURE_V2_RESOLUTIONS.md supersedes conflicting V1 definitions. Phases 0 through 5 are implemented. Phase 5 follows PHASE_5_FRONTEND_SPEC.md.txt and uses its allowed Vite + React stack. Retries use a stable operation_id plus a monotonically increasing external attempt_no: fencing rejects the aborted generation, while an authorized higher generation can execute. Reviewer IDs must match a configured bearer-token identity. Demo commands execute inline under a durable 30-second lease; crash recovery is explicitly driven by resume. API schemas and verification results are recorded in MEMORY.md.

@@ -49,6 +49,16 @@ Phase 5 frontend is complete. The final backend suite has 65 passing tests with 
 - Full checkpoint snapshots and unpaginated traces are bounded demo mechanisms. Hold expiry, throttling/backoff and richer natural-language/LLM planning are deferred. auto_pause_at_approval=false cannot bypass approval.
 - Simulated crash exceptions release their invocation lease to keep demos immediate; actual process termination retains it until expiry, as tested.
 
+## Task worker extension — 2026-10-27
+
+- Task budgets and policy context are frozen into RFQ metadata, bound by the approval hash and rechecked during revisions and sandbox overrides.
+- Task commands persist ownership leases and an allocated run ID before execution. Retrying the same task reuses its run instead of creating duplicate quotes/holds.
+- Category requests adapt to available approved stock; unavailable explicit SKUs request clarification. Negative/fractional quantities, unsupported currencies and unrecognized budget formats do not silently become valid requests.
+- Paused, signed approvals can continue execution without requesting a second decision. Text clarifications never grant approval.
+- Completion summaries read quote, hold and approval-bound email records. Disagreement is surfaced as FAILED_VERIFICATION.
+- Provider errors, invalid model output and missing credentials block business effects. OpenAI request handling is tested with stubbed HTTP responses; live model execution remains unverified until credentials are configured.
+- Browser checks found an implicit textarea-label issue and mobile grid minimum sizing around record IDs; both were corrected.
+
 ## GitHub publication preparation
 
 - Generated TypeScript's OpenAPI fingerprint previously depended on CRLF/LF bytes. The generator now normalizes the input to LF, matching Git checkout behavior across platforms.

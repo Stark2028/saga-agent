@@ -4,6 +4,8 @@ import '@fontsource/ibm-plex-sans/400.css';
 import '@fontsource/ibm-plex-sans/500.css';
 import '@fontsource/ibm-plex-sans/600.css';
 import Studio from './app/page';
+import TaskWorkspace, { CompanyWorkspace } from './app/TaskWorkspace';
 import './styles.css';
 
-createRoot(document.getElementById('root')!).render(<StrictMode><Studio /></StrictMode>);
+const View = window.location.pathname.startsWith('/studio') ? Studio : window.location.pathname.startsWith('/company') ? CompanyWorkspace : TaskWorkspace;
+createRoot(document.getElementById('root')!).render(<StrictMode><View /></StrictMode>);

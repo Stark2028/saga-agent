@@ -34,6 +34,9 @@ jobs:
       - name: Run backend tests with warnings as errors
         working-directory: backend
         run: python -m pytest -q -W error --junitxml=pytest-results.xml
+      - name: Evaluate offline task worker
+        working-directory: backend
+        run: python -m scripts.run_agent_evals
       - name: Upload test report
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

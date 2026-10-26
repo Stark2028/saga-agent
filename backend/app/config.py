@@ -20,6 +20,9 @@ class Settings:
     max_execute_attempts: int = 3
     max_reconcile_polls: int = 3
     max_compensation_attempts: int = 3
+    openai_api_key: str = field(default_factory=lambda: os.getenv("OPENAI_API_KEY", ""), repr=False)
+    openai_model: str = field(default_factory=lambda: os.getenv("SAGA_OPENAI_MODEL", ""))
+    agent_max_recoveries: int = 2
 
     def validate(self):
         if len(self.hmac_secret) < 32:

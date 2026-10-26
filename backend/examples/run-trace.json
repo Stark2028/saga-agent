@@ -19,8 +19,8 @@
     "lease_expires_at": null,
     "created_at": "2026-10-26T14:57:55.362405Z",
     "updated_at": "2026-10-26T14:57:55.709852Z",
-    "execution_mode": "LIVE",
     "id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+    "execution_mode": "LIVE",
     "parent_run_id": null,
     "status": "COMPLETED",
     "rfq_payload": {
@@ -458,422 +458,422 @@
   "external_records": {
     "stock": [
       {
+        "name": "Aplus laptop 1",
         "sku": "APL-001",
         "unit_price": 125000,
-        "name": "Aplus laptop 1",
         "reserved_qty": 3,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "laptop",
+        "namespace": "live",
         "available_qty": 984,
         "fulfilled_qty": 13
       },
       {
+        "name": "Aplus monitor 2",
         "sku": "APL-002",
         "unit_price": 150000,
-        "name": "Aplus monitor 2",
         "reserved_qty": 4,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "monitor",
+        "namespace": "live",
         "available_qty": 980,
         "fulfilled_qty": 16
       },
       {
+        "name": "Aplus keyboard 3",
         "sku": "APL-003",
         "unit_price": 175000,
-        "name": "Aplus keyboard 3",
         "reserved_qty": 5,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "keyboard",
+        "namespace": "live",
         "available_qty": 976,
         "fulfilled_qty": 19
       },
       {
+        "name": "Aplus dock 4",
         "sku": "APL-004",
         "unit_price": 200000,
-        "name": "Aplus dock 4",
         "reserved_qty": 6,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "dock",
+        "namespace": "live",
         "available_qty": 972,
         "fulfilled_qty": 22
       },
       {
+        "name": "Aplus headset 5",
         "sku": "APL-005",
         "unit_price": 225000,
-        "name": "Aplus headset 5",
         "reserved_qty": 7,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "headset",
+        "namespace": "live",
         "available_qty": 968,
         "fulfilled_qty": 25
       },
       {
+        "name": "Aplus laptop 6",
         "sku": "APL-006",
         "unit_price": 250000,
-        "name": "Aplus laptop 6",
         "reserved_qty": 8,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "laptop",
+        "namespace": "live",
         "available_qty": 964,
         "fulfilled_qty": 28
       },
       {
+        "name": "Aplus monitor 7",
         "sku": "APL-007",
         "unit_price": 275000,
-        "name": "Aplus monitor 7",
         "reserved_qty": 9,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "monitor",
+        "namespace": "live",
         "available_qty": 960,
         "fulfilled_qty": 31
       },
       {
+        "name": "Aplus keyboard 8",
         "sku": "APL-008",
         "unit_price": 300000,
-        "name": "Aplus keyboard 8",
         "reserved_qty": 10,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "keyboard",
+        "namespace": "live",
         "available_qty": 956,
         "fulfilled_qty": 34
       },
       {
+        "name": "Aplus dock 9",
         "sku": "APL-009",
         "unit_price": 325000,
-        "name": "Aplus dock 9",
         "reserved_qty": 2,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "dock",
+        "namespace": "live",
         "available_qty": 988,
         "fulfilled_qty": 10
       },
       {
+        "name": "Aplus headset 10",
         "sku": "APL-010",
         "unit_price": 350000,
-        "name": "Aplus headset 10",
         "reserved_qty": 3,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "headset",
+        "namespace": "live",
         "available_qty": 984,
         "fulfilled_qty": 13
       },
       {
+        "name": "Aplus laptop 11",
         "sku": "APL-011",
         "unit_price": 375000,
-        "name": "Aplus laptop 11",
         "reserved_qty": 4,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "laptop",
+        "namespace": "live",
         "available_qty": 980,
         "fulfilled_qty": 16
       },
       {
+        "name": "Aplus monitor 12",
         "sku": "APL-012",
         "unit_price": 400000,
-        "name": "Aplus monitor 12",
         "reserved_qty": 5,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "monitor",
+        "namespace": "live",
         "available_qty": 976,
         "fulfilled_qty": 19
       },
       {
+        "name": "Aplus keyboard 13",
         "sku": "APL-013",
         "unit_price": 425000,
-        "name": "Aplus keyboard 13",
         "reserved_qty": 6,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "keyboard",
+        "namespace": "live",
         "available_qty": 972,
         "fulfilled_qty": 22
       },
       {
+        "name": "Aplus dock 14",
         "sku": "APL-014",
         "unit_price": 450000,
-        "name": "Aplus dock 14",
         "reserved_qty": 7,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "dock",
+        "namespace": "live",
         "available_qty": 968,
         "fulfilled_qty": 25
       },
       {
+        "name": "Aplus headset 15",
         "sku": "APL-015",
         "unit_price": 475000,
-        "name": "Aplus headset 15",
         "reserved_qty": 8,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "headset",
+        "namespace": "live",
         "available_qty": 964,
         "fulfilled_qty": 28
       },
       {
+        "name": "Aplus laptop 16",
         "sku": "APL-016",
         "unit_price": 500000,
-        "name": "Aplus laptop 16",
         "reserved_qty": 9,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "laptop",
+        "namespace": "live",
         "available_qty": 960,
         "fulfilled_qty": 31
       },
       {
+        "name": "Aplus monitor 17",
         "sku": "APL-017",
         "unit_price": 525000,
-        "name": "Aplus monitor 17",
         "reserved_qty": 10,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "monitor",
+        "namespace": "live",
         "available_qty": 956,
         "fulfilled_qty": 34
       },
       {
+        "name": "Aplus keyboard 18",
         "sku": "APL-018",
         "unit_price": 550000,
-        "name": "Aplus keyboard 18",
         "reserved_qty": 2,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "keyboard",
+        "namespace": "live",
         "available_qty": 988,
         "fulfilled_qty": 10
       },
       {
+        "name": "Aplus dock 19",
         "sku": "APL-019",
         "unit_price": 575000,
-        "name": "Aplus dock 19",
         "reserved_qty": 3,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "dock",
+        "namespace": "live",
         "available_qty": 984,
         "fulfilled_qty": 13
       },
       {
+        "name": "Aplus headset 20",
         "sku": "APL-020",
         "unit_price": 600000,
-        "name": "Aplus headset 20",
         "reserved_qty": 4,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "headset",
+        "namespace": "live",
         "available_qty": 980,
         "fulfilled_qty": 16
       },
       {
+        "name": "Aplus laptop 21",
         "sku": "APL-021",
         "unit_price": 625000,
-        "name": "Aplus laptop 21",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "laptop",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus monitor 22",
         "sku": "APL-022",
         "unit_price": 650000,
-        "name": "Aplus monitor 22",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "monitor",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus keyboard 23",
         "sku": "APL-023",
         "unit_price": 675000,
-        "name": "Aplus keyboard 23",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "keyboard",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus dock 24",
         "sku": "APL-024",
         "unit_price": 700000,
-        "name": "Aplus dock 24",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "dock",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus headset 25",
         "sku": "APL-025",
         "unit_price": 725000,
-        "name": "Aplus headset 25",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "headset",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus laptop 26",
         "sku": "APL-026",
         "unit_price": 750000,
-        "name": "Aplus laptop 26",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "laptop",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus monitor 27",
         "sku": "APL-027",
         "unit_price": 775000,
-        "name": "Aplus monitor 27",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "monitor",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus keyboard 28",
         "sku": "APL-028",
         "unit_price": 800000,
-        "name": "Aplus keyboard 28",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "keyboard",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus dock 29",
         "sku": "APL-029",
         "unit_price": 825000,
-        "name": "Aplus dock 29",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "dock",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       },
       {
+        "name": "Aplus headset 30",
         "sku": "APL-030",
         "unit_price": 850000,
-        "name": "Aplus headset 30",
         "reserved_qty": 0,
         "specs": {
           "interface": "USB-C",
           "currency": "INR"
         },
-        "namespace": "live",
         "category": "headset",
+        "namespace": "live",
         "available_qty": 1000,
         "fulfilled_qty": 0
       }
@@ -891,8 +891,8 @@
         ],
         "released_by_op_id": null,
         "released_at": null,
-        "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
         "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f",
+        "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
         "status": "COMMITTED_CONVERTED",
         "created_at": "2026-10-26T14:57:55.454949Z"
       }
@@ -920,13 +920,13 @@
     ],
     "emails": [
       {
-        "email_id": "340ce164-2134-485f-b27a-ec4c852366a4",
         "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+        "email_id": "340ce164-2134-485f-b27a-ec4c852366a4",
         "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
         "body_summary": "{\"currency\":\"INR\",\"line_items\":[{\"qty\":3,\"sku\":\"APL-001\",\"unit_price\":125000}],\"quote_id\":\"b248cc04-ffba-4105-a28d-f33d60ff5b79\",\"recipient\":\"buyer1@example.test\",\"total_amount\":375000}",
+        "recipient": "buyer1@example.test",
         "namespace": "live",
         "operation_id": "d92e858e-296d-5402-bab1-4b283dab8ef6",
-        "recipient": "buyer1@example.test",
         "bound_state_hash": "4bbe9351181bf9c29b549472b03e140bd34cee1a983b1cc3f2f5858aa079a4c7",
         "sent_at": "2026-10-26T14:57:55.646826Z"
       }

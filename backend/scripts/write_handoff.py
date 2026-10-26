@@ -7,6 +7,7 @@ import json
 import platform
 import re
 import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from sqlalchemy import select
@@ -32,7 +33,7 @@ async def main(summary):
     if counts["failures"] or counts["errors"]:
         raise ValueError("Cannot mark Phase 4 complete with failing verification")
     verification = {
-        "date": "2026-10-26",
+        "date": datetime.now(timezone(timedelta(hours=5, minutes=30))).date().isoformat(),
         "timezone": "Asia/Calcutta",
         "working_directory": str(BACKEND),
         "command": COMMAND,
@@ -95,7 +96,7 @@ async def main(summary):
     lines = [
         "# SagaAgent — Gemini Handoff Memory",
         "",
-        "Updated: 2026-10-26 (Asia/Calcutta). Phases 0, 1, 2, 3, 4 and 5 are complete for the V2 SQLite mock harness and local Trace & Chaos Studio.",
+        f"Updated: {verification['date']} (Asia/Calcutta). Phases 0 through 6 are complete: durable SQLite runtime, trace studio, goal-driven task controller and company workspace. Live OpenAI interpretation requires configured credentials and is not represented by offline evaluation results.",
         "",
         "## Source of truth and files",
         "",
@@ -111,6 +112,7 @@ async def main(summary):
         "- Phase 3: seven run routes and two chaos routes. Exact response schemas are embedded below. First expanded suite: 42 passed, 12 serialization warnings in 27.16s (exit 0). Dedicated response DTOs corrected those warnings; subsequent suite: 51 passed in 30.49s with -W error (exit 0).",
         "- Phase 4: final pytest suite and two complete seeded benchmark executions. The latest final-suite command/counts and benchmark measurements below supersede earlier results.",
         "- Phase 5: Vite + React + TypeScript studio, generated OpenAPI types, five guided workflows, reviewer gate, sandbox and benchmark views. Backend gained local CORS, discoverable 503 run IDs and corrected benchmark artifact path. Exact final checks and results are below.",
+        "- Phase 6: bounded quotation/inventory task controller; configurable OpenAI proposal interpretation and labeled offline parser; versioned company context, clarification, allocated run identity, automatic bounded recovery, budget-bound approvals/revisions/forks, independent completion verification and task/company workspaces. Exact final checks are in the Task-worker verification section below.",
         "",
         "## Final pytest results (measured)",
         "",
@@ -161,6 +163,14 @@ async def main(summary):
         "| GET /api/runs/{run_id}/trace | 200 | RunTraceResponse |",
         "| POST /api/chaos/scenarios/{scenario_id} | 201 | RunTraceResponse |",
         "| GET /api/chaos/benchmarks | 200 | BenchmarkResponse |",
+        "| GET /api/agent/capabilities | 200 | AgentCapabilities |",
+        "| GET /api/company | 200 | CompanyResponse |",
+        "| POST /api/tasks | 201 | TaskResponse |",
+        "| GET /api/tasks | 200 | TaskRecordResponse[] |",
+        "| GET /api/tasks/{task_id} | 200 | TaskResponse |",
+        "| POST /api/tasks/{task_id}/continue | 200 | TaskResponse |",
+        "",
+        "TaskResponse has exactly task, trace (nullable RunTraceResponse), summary and checks. Each check has name, passed and evidence. Task creation persists an observation/decision record; blocked model/policy processing returns task.status=BLOCKED with task.error_code rather than claiming completed business work. Task source content is persisted but omitted from task responses; source name/hash remain visible. GET company returns policy, customers, stock, quotes and emails. All required and nullable fields are explicit in the exact generated schemas below. See backend/examples/task-response.json for an actual validated task response.",
         "",
         "All expected errors use ErrorResponse. Example actual 404 payload:",
         "",
@@ -170,7 +180,7 @@ async def main(summary):
         "",
         "## Phase 5 frontend and measured verification",
         "",
-        "Stack: Vite 7, React 19, TypeScript 5, Tailwind CSS 4, Lucide React. frontend/src/types/saga.ts is generated from backend/openapi.json (28 schema components) by frontend/scripts/generate-types.mjs; frontend/src/data/ copies the 30-item catalogue and 20 seeded RFQ scenarios. The generator embeds the OpenAPI SHA256 and --check rejects stale types. Do not hand-edit generated contracts.",
+        "Stack: Vite 7, React 19, TypeScript 5, Tailwind CSS 4, Lucide React. frontend/src/types/saga.ts is generated from backend/openapi.json (currently 38 schema components) by frontend/scripts/generate-types.mjs; frontend/src/data/ copies the 30-item catalogue and 20 seeded RFQ scenarios. The generator embeds the LF-normalized OpenAPI SHA256 and --check rejects stale types. Do not hand-edit generated contracts. The following Phase 5 measurements are historical; the Phase 6 verification section supersedes their counts.",
         "",
         "The studio has five guided scenario buttons: lost CRM response with one-quote reconciliation; injected worker crash with automatic trace loading from 503 and Resume; clean rejection or failed compensation; stale approval after a paused dispatch and revised RFQ; historical sandbox fork with namespace/source map. It also exposes all ChaosConfig controls, revision-grouped step/attempt inspection, frozen approval payload and hash, resource tables, and the measured 200-execution benchmark. Currency displays INR converted from integer paise while raw payloads retain paise.",
         "",
@@ -206,10 +216,10 @@ async def main(summary):
         "",
         "Scope: SQLite reference harness with mock providers. PostgreSQL concurrency, migrations, real API adapters, tenant authorization, startup scheduling, command idempotency keys, hold expiry, throttling/backoff and a human repair UI are not implemented/validated. Exhausted or unresolved effects remain visible for operator intervention. Full snapshots and unpaginated traces target a bounded demo dataset. Reviewer authentication is a configured token map, not enterprise SSO. Do not describe these as verified production integrations.",
         "",
-        "Handoff state: Phase 5 is complete. Future work is production integration: PostgreSQL concurrency, migrations, provider adapters, identity, recovery scheduling and operator repair workflows. After every completed phase or task, update MEMORY.md and BUGS.md with exact schemas, commands, pytest counts/results and any measured benchmark output. Never replace actual results with expected target numbers.",
+        "Handoff state: Phase 6 is complete locally. OpenAI request handling is implemented and stub-tested but live calls require credentials and a model configured in the backend environment. Offline evaluation is not evidence of LLM quality or computer-use autonomy. Future work includes live-model evaluation, real provider/browser tools, PostgreSQL migrations/concurrency, identity, recovery scheduling and operator repair. After every completed phase, update MEMORY.md and BUGS.md with exact schemas, commands, pytest counts/results and measured evaluation output.",
         "",
     ]
-    for report in [ROOT / "frontend" / "VERIFICATION.md", ROOT / "docs" / "RELEASE_CHECKS.md"]:
+    for report in [ROOT / "frontend" / "VERIFICATION.md", ROOT / "docs" / "RELEASE_CHECKS.md", ROOT / "docs" / "AGENT_VERIFICATION.md"]:
         if report.exists():
             lines.extend(["", report.read_text(encoding="utf-8"), ""])
     (ROOT / "MEMORY.md").write_text("\n".join(lines), encoding="utf-8")
