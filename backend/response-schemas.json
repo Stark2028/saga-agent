@@ -1,0 +1,2003 @@
+{
+  "responses": {
+    "POST /api/runs": {
+      "201": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "409": {
+        "description": "Conflict",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "422": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "503": {
+        "description": "Service Unavailable",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "GET /api/runs/{run_id}/trace": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "POST /api/runs/{run_id}/resume": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "POST /api/runs/{run_id}/approve": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "POST /api/runs/{run_id}/reject": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "POST /api/runs/{run_id}/revise-rfq": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "POST /api/runs/{run_id}/fork": {
+      "201": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "POST /api/chaos/scenarios/{scenario_id}": {
+      "201": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RunTraceResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unauthorized"
+      },
+      "403": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Forbidden"
+      },
+      "404": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Not Found"
+      },
+      "409": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Conflict"
+      },
+      "422": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Unprocessable Entity"
+      },
+      "503": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        },
+        "description": "Service Unavailable"
+      }
+    },
+    "GET /api/chaos/benchmarks": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BenchmarkResponse"
+            }
+          }
+        }
+      },
+      "401": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "409": {
+        "description": "Conflict",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "422": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      },
+      "503": {
+        "description": "Service Unavailable",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApprovalResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "revision_no": {
+            "type": "integer",
+            "title": "Revision No"
+          },
+          "bound_state_hash": {
+            "type": "string",
+            "title": "Bound State Hash"
+          },
+          "frozen_dispatch_payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Frozen Dispatch Payload"
+          },
+          "reviewer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer Id"
+          },
+          "reviewer_signature": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer Signature"
+          },
+          "reviewer_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer Note"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ApprovalStatus"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "decided_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "run_id",
+          "revision_no",
+          "bound_state_hash",
+          "frozen_dispatch_payload",
+          "reviewer_id",
+          "reviewer_signature",
+          "reviewer_note",
+          "status",
+          "created_at",
+          "decided_at"
+        ],
+        "title": "ApprovalResponse"
+      },
+      "ApprovalStatus": {
+        "type": "string",
+        "enum": [
+          "PENDING",
+          "APPROVED",
+          "CONSUMED_FOR_DISPATCH",
+          "REJECTED",
+          "INVALIDATED_STALE"
+        ],
+        "title": "ApprovalStatus"
+      },
+      "ApproveRunRequest": {
+        "properties": {
+          "reviewer_id": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Reviewer Id"
+          },
+          "bound_revision_no": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Bound Revision No"
+          },
+          "bound_state_hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Bound State Hash"
+          },
+          "reviewer_note": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer Note"
+          },
+          "auto_execute_dispatch": {
+            "type": "boolean",
+            "title": "Auto Execute Dispatch",
+            "default": true
+          },
+          "chaos_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChaosConfig"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reviewer_id",
+          "bound_revision_no",
+          "bound_state_hash"
+        ],
+        "title": "ApproveRunRequest"
+      },
+      "AttemptResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "step_id": {
+            "type": "string",
+            "title": "Step Id"
+          },
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "attempt_no": {
+            "type": "integer",
+            "title": "Attempt No"
+          },
+          "event": {
+            "type": "string",
+            "title": "Event"
+          },
+          "evidence": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Evidence"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "run_id",
+          "step_id",
+          "kind",
+          "attempt_no",
+          "event",
+          "evidence",
+          "created_at"
+        ],
+        "title": "AttemptResponse"
+      },
+      "BenchmarkMetric": {
+        "properties": {
+          "cohort": {
+            "type": "string",
+            "title": "Cohort"
+          },
+          "metric": {
+            "type": "string",
+            "title": "Metric"
+          },
+          "denominator": {
+            "type": "integer",
+            "title": "Denominator"
+          },
+          "saga": {
+            "type": "integer",
+            "title": "Saga"
+          },
+          "naive": {
+            "type": "integer",
+            "title": "Naive"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cohort",
+          "metric",
+          "denominator",
+          "saga",
+          "naive"
+        ],
+        "title": "BenchmarkMetric"
+      },
+      "BenchmarkResponse": {
+        "properties": {
+          "seed": {
+            "type": "integer",
+            "title": "Seed"
+          },
+          "cases_per_runner": {
+            "type": "integer",
+            "title": "Cases Per Runner"
+          },
+          "total_executions": {
+            "type": "integer",
+            "title": "Total Executions"
+          },
+          "metrics": {
+            "items": {
+              "$ref": "#/components/schemas/BenchmarkMetric"
+            },
+            "type": "array",
+            "title": "Metrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "seed",
+          "cases_per_runner",
+          "total_executions",
+          "metrics"
+        ],
+        "title": "BenchmarkResponse"
+      },
+      "ChaosConfig": {
+        "properties": {
+          "drop_response_after_write_on_step": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 5.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Drop Response After Write On Step"
+          },
+          "crash_worker_after_step_in_flight": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 5.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Crash Worker After Step In Flight"
+          },
+          "crash_after_external_commit_on_step": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 5.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Crash After External Commit On Step"
+          },
+          "transient_timeout_before_write_on_step": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 5.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transient Timeout Before Write On Step"
+          },
+          "fail_compensation_on_step": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fail Compensation On Step"
+          },
+          "crash_after_compensation_write_on_step": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Crash After Compensation Write On Step"
+          },
+          "drop_compensation_response_on_step": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2.0,
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Drop Compensation Response On Step"
+          },
+          "crash_after_dispatch_claim": {
+            "type": "boolean",
+            "title": "Crash After Dispatch Claim",
+            "default": false
+          },
+          "keep_verification_unknown": {
+            "type": "boolean",
+            "title": "Keep Verification Unknown",
+            "default": false
+          },
+          "fail_finalization_once": {
+            "type": "boolean",
+            "title": "Fail Finalization Once",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ChaosConfig"
+      },
+      "ChaosScenarioRequest": {
+        "properties": {
+          "chaos_config": {
+            "$ref": "#/components/schemas/ChaosConfig"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ChaosScenarioRequest"
+      },
+      "CompensationStatus": {
+        "type": "string",
+        "enum": [
+          "NOT_NEEDED",
+          "PENDING",
+          "IN_FLIGHT",
+          "OUTCOME_UNKNOWN",
+          "COMPENSATED",
+          "COMPENSATION_FAILED"
+        ],
+        "title": "CompensationStatus"
+      },
+      "CreateRunRequest": {
+        "properties": {
+          "scenario_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id"
+          },
+          "customer_name": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Customer Name"
+          },
+          "customer_email": {
+            "type": "string",
+            "maxLength": 320,
+            "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+            "title": "Customer Email"
+          },
+          "raw_request": {
+            "type": "string",
+            "maxLength": 20000,
+            "minLength": 1,
+            "title": "Raw Request"
+          },
+          "chaos_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChaosConfig"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "auto_pause_at_approval": {
+            "type": "boolean",
+            "title": "Auto Pause At Approval",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "customer_name",
+          "customer_email",
+          "raw_request"
+        ],
+        "title": "CreateRunRequest"
+      },
+      "EmailResponse": {
+        "properties": {
+          "email_id": {
+            "type": "string",
+            "title": "Email Id"
+          },
+          "namespace": {
+            "type": "string",
+            "title": "Namespace"
+          },
+          "operation_id": {
+            "type": "string",
+            "title": "Operation Id"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "recipient": {
+            "type": "string",
+            "title": "Recipient"
+          },
+          "quote_id": {
+            "type": "string",
+            "title": "Quote Id"
+          },
+          "bound_state_hash": {
+            "type": "string",
+            "title": "Bound State Hash"
+          },
+          "body_summary": {
+            "type": "string",
+            "title": "Body Summary"
+          },
+          "sent_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Sent At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email_id",
+          "namespace",
+          "operation_id",
+          "run_id",
+          "recipient",
+          "quote_id",
+          "bound_state_hash",
+          "body_summary",
+          "sent_at"
+        ],
+        "title": "EmailResponse"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "details": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Details"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse"
+      },
+      "ExecutionMode": {
+        "type": "string",
+        "enum": [
+          "LIVE",
+          "SANDBOX"
+        ],
+        "title": "ExecutionMode"
+      },
+      "ExternalRecords": {
+        "properties": {
+          "stock": {
+            "items": {
+              "$ref": "#/components/schemas/StockResponse"
+            },
+            "type": "array",
+            "title": "Stock"
+          },
+          "holds": {
+            "items": {
+              "$ref": "#/components/schemas/HoldResponse"
+            },
+            "type": "array",
+            "title": "Holds"
+          },
+          "quotes": {
+            "items": {
+              "$ref": "#/components/schemas/QuoteResponse"
+            },
+            "type": "array",
+            "title": "Quotes"
+          },
+          "emails": {
+            "items": {
+              "$ref": "#/components/schemas/EmailResponse"
+            },
+            "type": "array",
+            "title": "Emails"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stock",
+          "holds",
+          "quotes",
+          "emails"
+        ],
+        "title": "ExternalRecords"
+      },
+      "ForkRunRequest": {
+        "properties": {
+          "from_step_index": {
+            "type": "integer",
+            "maximum": 3.0,
+            "minimum": 0.0,
+            "title": "From Step Index"
+          },
+          "revision_no": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revision No"
+          },
+          "override_plan": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Override Plan"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "from_step_index"
+        ],
+        "title": "ForkRunRequest"
+      },
+      "HoldResponse": {
+        "properties": {
+          "hold_id": {
+            "type": "string",
+            "title": "Hold Id"
+          },
+          "namespace": {
+            "type": "string",
+            "title": "Namespace"
+          },
+          "operation_id": {
+            "type": "string",
+            "title": "Operation Id"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "items": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "released_by_op_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Released By Op Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "released_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Released At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "hold_id",
+          "namespace",
+          "operation_id",
+          "run_id",
+          "items",
+          "status",
+          "released_by_op_id",
+          "created_at",
+          "released_at"
+        ],
+        "title": "HoldResponse"
+      },
+      "QuoteResponse": {
+        "properties": {
+          "quote_id": {
+            "type": "string",
+            "title": "Quote Id"
+          },
+          "namespace": {
+            "type": "string",
+            "title": "Namespace"
+          },
+          "operation_id": {
+            "type": "string",
+            "title": "Operation Id"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "customer_email": {
+            "type": "string",
+            "title": "Customer Email"
+          },
+          "total_amount": {
+            "type": "integer",
+            "title": "Total Amount"
+          },
+          "line_items": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Line Items"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "voided_by_op_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voided By Op Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "voided_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voided At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "quote_id",
+          "namespace",
+          "operation_id",
+          "run_id",
+          "customer_email",
+          "total_amount",
+          "line_items",
+          "status",
+          "voided_by_op_id",
+          "created_at",
+          "voided_at"
+        ],
+        "title": "QuoteResponse"
+      },
+      "RejectRunRequest": {
+        "properties": {
+          "reviewer_id": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Reviewer Id"
+          },
+          "reviewer_note": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Reviewer Note"
+          },
+          "chaos_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChaosConfig"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "reviewer_id",
+          "reviewer_note"
+        ],
+        "title": "RejectRunRequest"
+      },
+      "ResumeRunRequest": {
+        "properties": {
+          "chaos_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChaosConfig"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ResumeRunRequest"
+      },
+      "ReviseRfqRequest": {
+        "properties": {
+          "raw_request": {
+            "type": "string",
+            "maxLength": 20000,
+            "minLength": 1,
+            "title": "Raw Request"
+          },
+          "chaos_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChaosConfig"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "raw_request"
+        ],
+        "title": "ReviseRfqRequest"
+      },
+      "RevisionResponse": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "revision_no": {
+            "type": "integer",
+            "title": "Revision No"
+          },
+          "rfq_payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Rfq Payload"
+          },
+          "agent_plan": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Agent Plan"
+          },
+          "state_hash": {
+            "type": "string",
+            "title": "State Hash"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "revision_no",
+          "rfq_payload",
+          "agent_plan",
+          "state_hash",
+          "status",
+          "created_at"
+        ],
+        "title": "RevisionResponse"
+      },
+      "RunResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "parent_run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Run Id"
+          },
+          "forked_from_step_index": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forked From Step Index"
+          },
+          "execution_mode": {
+            "$ref": "#/components/schemas/ExecutionMode"
+          },
+          "sandbox_namespace": {
+            "type": "string",
+            "title": "Sandbox Namespace"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RunStatus"
+          },
+          "active_revision_no": {
+            "type": "integer",
+            "title": "Active Revision No"
+          },
+          "rfq_payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Rfq Payload"
+          },
+          "agent_plan": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Agent Plan"
+          },
+          "state_hash": {
+            "type": "string",
+            "title": "State Hash"
+          },
+          "source_record_map": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Source Record Map"
+          },
+          "chaos_config": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Chaos Config"
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "lease_owner": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lease Owner"
+          },
+          "lease_expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lease Expires At"
+          },
+          "error_summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Summary"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "parent_run_id",
+          "forked_from_step_index",
+          "execution_mode",
+          "sandbox_namespace",
+          "status",
+          "active_revision_no",
+          "rfq_payload",
+          "agent_plan",
+          "state_hash",
+          "source_record_map",
+          "chaos_config",
+          "version",
+          "lease_owner",
+          "lease_expires_at",
+          "error_summary",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "RunResponse"
+      },
+      "RunStatus": {
+        "type": "string",
+        "enum": [
+          "RUNNING",
+          "AWAITING_APPROVAL",
+          "RECONCILING",
+          "COMPENSATING",
+          "DISPATCHING_FINAL",
+          "COMPLETED",
+          "COMPENSATED_HALTED",
+          "FAILED_NEEDS_HUMAN"
+        ],
+        "title": "RunStatus"
+      },
+      "RunTraceResponse": {
+        "properties": {
+          "run": {
+            "$ref": "#/components/schemas/RunResponse"
+          },
+          "revisions": {
+            "items": {
+              "$ref": "#/components/schemas/RevisionResponse"
+            },
+            "type": "array",
+            "title": "Revisions"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/StepResponse"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "approvals": {
+            "items": {
+              "$ref": "#/components/schemas/ApprovalResponse"
+            },
+            "type": "array",
+            "title": "Approvals"
+          },
+          "attempts": {
+            "items": {
+              "$ref": "#/components/schemas/AttemptResponse"
+            },
+            "type": "array",
+            "title": "Attempts"
+          },
+          "checkpoints_count": {
+            "type": "integer",
+            "title": "Checkpoints Count"
+          },
+          "external_records": {
+            "$ref": "#/components/schemas/ExternalRecords"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run",
+          "revisions",
+          "steps",
+          "approvals",
+          "attempts",
+          "checkpoints_count",
+          "external_records"
+        ],
+        "title": "RunTraceResponse"
+      },
+      "StepResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "revision_no": {
+            "type": "integer",
+            "title": "Revision No"
+          },
+          "step_index": {
+            "type": "integer",
+            "title": "Step Index"
+          },
+          "step_name": {
+            "type": "string",
+            "title": "Step Name"
+          },
+          "tool_name": {
+            "type": "string",
+            "title": "Tool Name"
+          },
+          "operation_id": {
+            "type": "string",
+            "title": "Operation Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/StepStatus"
+          },
+          "attempt_count": {
+            "type": "integer",
+            "title": "Attempt Count"
+          },
+          "reconcile_polls": {
+            "type": "integer",
+            "title": "Reconcile Polls"
+          },
+          "input_payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Input Payload"
+          },
+          "output_payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Output Payload"
+          },
+          "external_record_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "External Record Id"
+          },
+          "verification_evidence": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Verification Evidence"
+          },
+          "compensation_evidence": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Compensation Evidence"
+          },
+          "compensation_operation_id": {
+            "type": "string",
+            "title": "Compensation Operation Id"
+          },
+          "compensation_status": {
+            "$ref": "#/components/schemas/CompensationStatus"
+          },
+          "compensation_attempt_count": {
+            "type": "integer",
+            "title": "Compensation Attempt Count"
+          },
+          "error_detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Detail"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "run_id",
+          "revision_no",
+          "step_index",
+          "step_name",
+          "tool_name",
+          "operation_id",
+          "status",
+          "attempt_count",
+          "reconcile_polls",
+          "input_payload",
+          "output_payload",
+          "external_record_id",
+          "verification_evidence",
+          "compensation_evidence",
+          "compensation_operation_id",
+          "compensation_status",
+          "compensation_attempt_count",
+          "error_detail",
+          "started_at",
+          "completed_at"
+        ],
+        "title": "StepResponse"
+      },
+      "StepStatus": {
+        "type": "string",
+        "enum": [
+          "PENDING",
+          "IN_FLIGHT",
+          "OUTCOME_UNKNOWN",
+          "COMMITTED",
+          "FAILED_RETRYABLE",
+          "FAILED_TERMINAL",
+          "COMPENSATING",
+          "COMPENSATED",
+          "COMPENSATION_FAILED"
+        ],
+        "title": "StepStatus"
+      },
+      "StockResponse": {
+        "properties": {
+          "namespace": {
+            "type": "string",
+            "title": "Namespace"
+          },
+          "sku": {
+            "type": "string",
+            "title": "Sku"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "unit_price": {
+            "type": "integer",
+            "title": "Unit Price"
+          },
+          "available_qty": {
+            "type": "integer",
+            "title": "Available Qty"
+          },
+          "reserved_qty": {
+            "type": "integer",
+            "title": "Reserved Qty"
+          },
+          "fulfilled_qty": {
+            "type": "integer",
+            "title": "Fulfilled Qty"
+          },
+          "specs": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Specs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "namespace",
+          "sku",
+          "name",
+          "category",
+          "unit_price",
+          "available_qty",
+          "reserved_qty",
+          "fulfilled_qty",
+          "specs"
+        ],
+        "title": "StockResponse"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

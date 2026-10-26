@@ -1,0 +1,935 @@
+{
+  "run": {
+    "sandbox_namespace": "live",
+    "forked_from_step_index": null,
+    "active_revision_no": 1,
+    "agent_plan": {
+      "line_items": [
+        {
+          "sku": "APL-001",
+          "qty": 3,
+          "unit_price": 125000
+        }
+      ],
+      "total_amount": 375000,
+      "currency": "INR",
+      "exceptions": []
+    },
+    "version": 40,
+    "lease_expires_at": null,
+    "created_at": "2026-10-26T14:57:55.362405Z",
+    "updated_at": "2026-10-26T14:57:55.709852Z",
+    "execution_mode": "LIVE",
+    "id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+    "parent_run_id": null,
+    "status": "COMPLETED",
+    "rfq_payload": {
+      "customer_name": "Business 1",
+      "customer_email": "buyer1@example.test",
+      "raw_request": "3 x APL-001",
+      "scenario_id": "rfq_01"
+    },
+    "state_hash": "4bbe9351181bf9c29b549472b03e140bd34cee1a983b1cc3f2f5858aa079a4c7",
+    "source_record_map": {},
+    "chaos_config": {
+      "drop_response_after_write_on_step": 2,
+      "crash_worker_after_step_in_flight": null,
+      "crash_after_external_commit_on_step": null,
+      "transient_timeout_before_write_on_step": null,
+      "fail_compensation_on_step": null,
+      "crash_after_compensation_write_on_step": null,
+      "drop_compensation_response_on_step": null,
+      "crash_after_dispatch_claim": false,
+      "keep_verification_unknown": false,
+      "fail_finalization_once": false
+    },
+    "lease_owner": null,
+    "error_summary": null
+  },
+  "revisions": [
+    {
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "state_hash": "4bbe9351181bf9c29b549472b03e140bd34cee1a983b1cc3f2f5858aa079a4c7",
+      "agent_plan": {
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "total_amount": 375000,
+        "currency": "INR",
+        "exceptions": []
+      },
+      "created_at": "2026-10-26T14:57:55.362405Z",
+      "revision_no": 1,
+      "rfq_payload": {
+        "customer_name": "Business 1",
+        "customer_email": "buyer1@example.test",
+        "raw_request": "3 x APL-001",
+        "scenario_id": "rfq_01"
+      },
+      "status": "COMPLETED"
+    }
+  ],
+  "steps": [
+    {
+      "status": "COMMITTED",
+      "compensation_operation_id": "8f2aa874-e1d0-5d10-9af4-d37963373cc3",
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "attempt_count": 0,
+      "compensation_status": "NOT_NEEDED",
+      "id": "6263af36-42fd-4c77-ac39-30aec7ed50d5",
+      "reconcile_polls": 0,
+      "compensation_attempt_count": 0,
+      "revision_no": 1,
+      "input_payload": {
+        "customer_name": "Business 1",
+        "customer_email": "buyer1@example.test",
+        "raw_request": "3 x APL-001",
+        "scenario_id": "rfq_01"
+      },
+      "error_detail": null,
+      "step_index": 0,
+      "output_payload": {
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "total_amount": 375000,
+        "currency": "INR",
+        "exceptions": []
+      },
+      "started_at": null,
+      "step_name": "parse_and_match_rfq",
+      "external_record_id": null,
+      "completed_at": "2026-10-26T14:57:55.410160Z",
+      "tool_name": "planner",
+      "verification_evidence": {},
+      "operation_id": "5f5967d1-9dba-5674-a0c4-5231c80b1cf3",
+      "compensation_evidence": {}
+    },
+    {
+      "status": "COMMITTED",
+      "compensation_operation_id": "36b32c2e-9710-57f2-a658-53af1dbbfece",
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "attempt_count": 1,
+      "compensation_status": "PENDING",
+      "id": "9db936bf-5563-4742-9978-b09654759214",
+      "reconcile_polls": 0,
+      "compensation_attempt_count": 0,
+      "revision_no": 1,
+      "input_payload": {
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "total_amount": 375000,
+        "currency": "INR",
+        "exceptions": []
+      },
+      "error_detail": null,
+      "step_index": 1,
+      "output_payload": {
+        "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f"
+      },
+      "started_at": "2026-10-26T14:57:55.441639Z",
+      "step_name": "reserve_inventory",
+      "external_record_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f",
+      "completed_at": "2026-10-26T14:57:55.456958Z",
+      "tool_name": "inventory_tool",
+      "verification_evidence": {
+        "status": "ACTIVE"
+      },
+      "operation_id": "a28ed726-1acb-589b-87f3-c83c273d80a5",
+      "compensation_evidence": {}
+    },
+    {
+      "status": "COMMITTED",
+      "compensation_operation_id": "4958b4ca-3cfb-56e7-9912-6b251ecfcc69",
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "attempt_count": 1,
+      "compensation_status": "PENDING",
+      "id": "9237270b-f2af-4902-876c-5624efc1af46",
+      "reconcile_polls": 0,
+      "compensation_attempt_count": 0,
+      "revision_no": 1,
+      "input_payload": {
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "total_amount": 375000,
+        "currency": "INR",
+        "exceptions": [],
+        "customer_email": "buyer1@example.test"
+      },
+      "error_detail": null,
+      "step_index": 2,
+      "output_payload": {
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79"
+      },
+      "started_at": "2026-10-26T14:57:55.472903Z",
+      "step_name": "create_crm_draft",
+      "external_record_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+      "completed_at": "2026-10-26T14:57:55.553238Z",
+      "tool_name": "crm_tool",
+      "verification_evidence": {
+        "status": "APPLIED",
+        "external_record_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "output_payload": {
+          "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79"
+        },
+        "evidence": {
+          "ledger_status": "COMMITTED",
+          "attempt_no": 1
+        }
+      },
+      "operation_id": "fe4386dc-b920-518e-a999-23578e1cea79",
+      "compensation_evidence": {}
+    },
+    {
+      "status": "COMMITTED",
+      "compensation_operation_id": "d9c95375-d7e3-5a4d-8758-5ac082fdc40f",
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "attempt_count": 0,
+      "compensation_status": "NOT_NEEDED",
+      "id": "eb097945-97a7-433a-9512-0460612c623f",
+      "reconcile_polls": 0,
+      "compensation_attempt_count": 0,
+      "revision_no": 1,
+      "input_payload": {},
+      "error_detail": null,
+      "step_index": 3,
+      "output_payload": {
+        "approval_required": true
+      },
+      "started_at": null,
+      "step_name": "await_human_approval",
+      "external_record_id": null,
+      "completed_at": "2026-10-26T14:57:55.577162Z",
+      "tool_name": "approval_gate",
+      "verification_evidence": {},
+      "operation_id": "0e4485f6-df35-5a8f-af82-82514e591386",
+      "compensation_evidence": {}
+    },
+    {
+      "status": "COMMITTED",
+      "compensation_operation_id": "f53b5035-67aa-53b8-a8f2-437f5a1d3787",
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "attempt_count": 1,
+      "compensation_status": "NOT_NEEDED",
+      "id": "a4c4ad04-6c59-4eb9-911b-848fad025b2f",
+      "reconcile_polls": 0,
+      "compensation_attempt_count": 0,
+      "revision_no": 1,
+      "input_payload": {
+        "recipient": "buyer1@example.test",
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "total_amount": 375000,
+        "currency": "INR"
+      },
+      "error_detail": null,
+      "step_index": 4,
+      "output_payload": {
+        "email_id": "340ce164-2134-485f-b27a-ec4c852366a4"
+      },
+      "started_at": "2026-10-26T14:57:55.646826Z",
+      "step_name": "dispatch_quote_email",
+      "external_record_id": "340ce164-2134-485f-b27a-ec4c852366a4",
+      "completed_at": "2026-10-26T14:57:55.646826Z",
+      "tool_name": "email_tool",
+      "verification_evidence": {
+        "mock_delivery": true,
+        "namespace": "live"
+      },
+      "operation_id": "d92e858e-296d-5402-bab1-4b283dab8ef6",
+      "compensation_evidence": {}
+    },
+    {
+      "status": "COMMITTED",
+      "compensation_operation_id": "eae1533b-1c94-50cb-b9b0-b3cd4faab298",
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "attempt_count": 1,
+      "compensation_status": "NOT_NEEDED",
+      "id": "18ce14ba-a40e-498a-897d-c9ac2a2260d9",
+      "reconcile_polls": 0,
+      "compensation_attempt_count": 0,
+      "revision_no": 1,
+      "input_payload": {
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f"
+      },
+      "error_detail": null,
+      "step_index": 5,
+      "output_payload": {
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f"
+      },
+      "started_at": "2026-10-26T14:57:55.678410Z",
+      "step_name": "finalize_quote_and_inventory",
+      "external_record_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+      "completed_at": "2026-10-26T14:57:55.694093Z",
+      "tool_name": "finalizer_tool",
+      "verification_evidence": {
+        "quote_status": "SENT",
+        "hold_status": "COMMITTED_CONVERTED"
+      },
+      "operation_id": "2818530a-370c-5b84-ab31-9686ead66dd3",
+      "compensation_evidence": {}
+    }
+  ],
+  "approvals": [
+    {
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "revision_no": 1,
+      "frozen_dispatch_payload": {
+        "recipient": "buyer1@example.test",
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "total_amount": 375000,
+        "currency": "INR"
+      },
+      "reviewer_signature": "ce4b223578676f457783156d3d45f3beb5a68d0a38435f019bc6f7b6e0dcbd18",
+      "status": "CONSUMED_FOR_DISPATCH",
+      "decided_at": "2026-10-26T14:57:55.599717Z",
+      "bound_state_hash": "4bbe9351181bf9c29b549472b03e140bd34cee1a983b1cc3f2f5858aa079a4c7",
+      "id": "b717ad41-75f4-4c37-9110-84f16388c662",
+      "reviewer_id": "benchmark_manager",
+      "reviewer_note": null,
+      "created_at": "2026-10-26T14:57:55.575158Z"
+    }
+  ],
+  "attempts": [
+    {
+      "kind": "EXECUTE",
+      "id": "a7e7fae6-af4c-44de-8e45-0c3c765cf82b",
+      "event": "STARTED",
+      "created_at": "2026-10-26T14:57:55.441639Z",
+      "step_id": "9db936bf-5563-4742-9978-b09654759214",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {}
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "876d085d-b0f7-4f0c-8af4-bc499203c624",
+      "event": "COMMITTED",
+      "created_at": "2026-10-26T14:57:55.456958Z",
+      "step_id": "9db936bf-5563-4742-9978-b09654759214",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {
+        "external_record_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f",
+        "output_payload": {
+          "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f"
+        },
+        "evidence": {
+          "status": "ACTIVE"
+        }
+      }
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "b947f3ce-a830-4dce-a31c-516297b16091",
+      "event": "STARTED",
+      "created_at": "2026-10-26T14:57:55.472903Z",
+      "step_id": "9237270b-f2af-4902-876c-5624efc1af46",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {}
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "6a06abcf-68fd-4615-ad64-f03b897d0bac",
+      "event": "OUTCOME_UNKNOWN",
+      "created_at": "2026-10-26T14:57:55.488995Z",
+      "step_id": "9237270b-f2af-4902-876c-5624efc1af46",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {
+        "error": "Injected response drop after external commit"
+      }
+    },
+    {
+      "kind": "VERIFY",
+      "id": "67cab4f1-551a-464c-b763-dcb657746ea1",
+      "event": "APPLIED",
+      "created_at": "2026-10-26T14:57:55.552488Z",
+      "step_id": "9237270b-f2af-4902-876c-5624efc1af46",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {
+        "status": "APPLIED",
+        "external_record_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "output_payload": {
+          "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79"
+        },
+        "evidence": {
+          "ledger_status": "COMMITTED",
+          "attempt_no": 1
+        }
+      }
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "71775228-2921-404f-93f3-ab8adb5b9bca",
+      "event": "STARTED",
+      "created_at": "2026-10-26T14:57:55.646826Z",
+      "step_id": "a4c4ad04-6c59-4eb9-911b-848fad025b2f",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {}
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "11f9b795-7e56-407e-b1be-538b00db293e",
+      "event": "COMMITTED",
+      "created_at": "2026-10-26T14:57:55.646826Z",
+      "step_id": "a4c4ad04-6c59-4eb9-911b-848fad025b2f",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {
+        "external_record_id": "340ce164-2134-485f-b27a-ec4c852366a4",
+        "output_payload": {
+          "email_id": "340ce164-2134-485f-b27a-ec4c852366a4"
+        },
+        "evidence": {
+          "mock_delivery": true,
+          "namespace": "live"
+        }
+      }
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "ce67d50f-f6e5-41d6-94dc-8106ac2bbad9",
+      "event": "STARTED",
+      "created_at": "2026-10-26T14:57:55.678410Z",
+      "step_id": "18ce14ba-a40e-498a-897d-c9ac2a2260d9",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {}
+    },
+    {
+      "kind": "EXECUTE",
+      "id": "97146ef2-a3b9-44bb-b6ae-37672e23992c",
+      "event": "COMMITTED",
+      "created_at": "2026-10-26T14:57:55.694093Z",
+      "step_id": "18ce14ba-a40e-498a-897d-c9ac2a2260d9",
+      "attempt_no": 1,
+      "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+      "evidence": {
+        "external_record_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "output_payload": {
+          "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+          "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f"
+        },
+        "evidence": {
+          "quote_status": "SENT",
+          "hold_status": "COMMITTED_CONVERTED"
+        }
+      }
+    }
+  ],
+  "checkpoints_count": 11,
+  "external_records": {
+    "stock": [
+      {
+        "sku": "APL-001",
+        "unit_price": 125000,
+        "name": "Aplus laptop 1",
+        "reserved_qty": 3,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "laptop",
+        "available_qty": 984,
+        "fulfilled_qty": 13
+      },
+      {
+        "sku": "APL-002",
+        "unit_price": 150000,
+        "name": "Aplus monitor 2",
+        "reserved_qty": 4,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "monitor",
+        "available_qty": 980,
+        "fulfilled_qty": 16
+      },
+      {
+        "sku": "APL-003",
+        "unit_price": 175000,
+        "name": "Aplus keyboard 3",
+        "reserved_qty": 5,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "keyboard",
+        "available_qty": 976,
+        "fulfilled_qty": 19
+      },
+      {
+        "sku": "APL-004",
+        "unit_price": 200000,
+        "name": "Aplus dock 4",
+        "reserved_qty": 6,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "dock",
+        "available_qty": 972,
+        "fulfilled_qty": 22
+      },
+      {
+        "sku": "APL-005",
+        "unit_price": 225000,
+        "name": "Aplus headset 5",
+        "reserved_qty": 7,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "headset",
+        "available_qty": 968,
+        "fulfilled_qty": 25
+      },
+      {
+        "sku": "APL-006",
+        "unit_price": 250000,
+        "name": "Aplus laptop 6",
+        "reserved_qty": 8,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "laptop",
+        "available_qty": 964,
+        "fulfilled_qty": 28
+      },
+      {
+        "sku": "APL-007",
+        "unit_price": 275000,
+        "name": "Aplus monitor 7",
+        "reserved_qty": 9,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "monitor",
+        "available_qty": 960,
+        "fulfilled_qty": 31
+      },
+      {
+        "sku": "APL-008",
+        "unit_price": 300000,
+        "name": "Aplus keyboard 8",
+        "reserved_qty": 10,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "keyboard",
+        "available_qty": 956,
+        "fulfilled_qty": 34
+      },
+      {
+        "sku": "APL-009",
+        "unit_price": 325000,
+        "name": "Aplus dock 9",
+        "reserved_qty": 2,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "dock",
+        "available_qty": 988,
+        "fulfilled_qty": 10
+      },
+      {
+        "sku": "APL-010",
+        "unit_price": 350000,
+        "name": "Aplus headset 10",
+        "reserved_qty": 3,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "headset",
+        "available_qty": 984,
+        "fulfilled_qty": 13
+      },
+      {
+        "sku": "APL-011",
+        "unit_price": 375000,
+        "name": "Aplus laptop 11",
+        "reserved_qty": 4,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "laptop",
+        "available_qty": 980,
+        "fulfilled_qty": 16
+      },
+      {
+        "sku": "APL-012",
+        "unit_price": 400000,
+        "name": "Aplus monitor 12",
+        "reserved_qty": 5,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "monitor",
+        "available_qty": 976,
+        "fulfilled_qty": 19
+      },
+      {
+        "sku": "APL-013",
+        "unit_price": 425000,
+        "name": "Aplus keyboard 13",
+        "reserved_qty": 6,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "keyboard",
+        "available_qty": 972,
+        "fulfilled_qty": 22
+      },
+      {
+        "sku": "APL-014",
+        "unit_price": 450000,
+        "name": "Aplus dock 14",
+        "reserved_qty": 7,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "dock",
+        "available_qty": 968,
+        "fulfilled_qty": 25
+      },
+      {
+        "sku": "APL-015",
+        "unit_price": 475000,
+        "name": "Aplus headset 15",
+        "reserved_qty": 8,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "headset",
+        "available_qty": 964,
+        "fulfilled_qty": 28
+      },
+      {
+        "sku": "APL-016",
+        "unit_price": 500000,
+        "name": "Aplus laptop 16",
+        "reserved_qty": 9,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "laptop",
+        "available_qty": 960,
+        "fulfilled_qty": 31
+      },
+      {
+        "sku": "APL-017",
+        "unit_price": 525000,
+        "name": "Aplus monitor 17",
+        "reserved_qty": 10,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "monitor",
+        "available_qty": 956,
+        "fulfilled_qty": 34
+      },
+      {
+        "sku": "APL-018",
+        "unit_price": 550000,
+        "name": "Aplus keyboard 18",
+        "reserved_qty": 2,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "keyboard",
+        "available_qty": 988,
+        "fulfilled_qty": 10
+      },
+      {
+        "sku": "APL-019",
+        "unit_price": 575000,
+        "name": "Aplus dock 19",
+        "reserved_qty": 3,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "dock",
+        "available_qty": 984,
+        "fulfilled_qty": 13
+      },
+      {
+        "sku": "APL-020",
+        "unit_price": 600000,
+        "name": "Aplus headset 20",
+        "reserved_qty": 4,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "headset",
+        "available_qty": 980,
+        "fulfilled_qty": 16
+      },
+      {
+        "sku": "APL-021",
+        "unit_price": 625000,
+        "name": "Aplus laptop 21",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "laptop",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-022",
+        "unit_price": 650000,
+        "name": "Aplus monitor 22",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "monitor",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-023",
+        "unit_price": 675000,
+        "name": "Aplus keyboard 23",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "keyboard",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-024",
+        "unit_price": 700000,
+        "name": "Aplus dock 24",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "dock",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-025",
+        "unit_price": 725000,
+        "name": "Aplus headset 25",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "headset",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-026",
+        "unit_price": 750000,
+        "name": "Aplus laptop 26",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "laptop",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-027",
+        "unit_price": 775000,
+        "name": "Aplus monitor 27",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "monitor",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-028",
+        "unit_price": 800000,
+        "name": "Aplus keyboard 28",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "keyboard",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-029",
+        "unit_price": 825000,
+        "name": "Aplus dock 29",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "dock",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      },
+      {
+        "sku": "APL-030",
+        "unit_price": 850000,
+        "name": "Aplus headset 30",
+        "reserved_qty": 0,
+        "specs": {
+          "interface": "USB-C",
+          "currency": "INR"
+        },
+        "namespace": "live",
+        "category": "headset",
+        "available_qty": 1000,
+        "fulfilled_qty": 0
+      }
+    ],
+    "holds": [
+      {
+        "namespace": "live",
+        "operation_id": "a28ed726-1acb-589b-87f3-c83c273d80a5",
+        "items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "released_by_op_id": null,
+        "released_at": null,
+        "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+        "hold_id": "2ce63a1e-a99a-4e4a-acf6-af6a45c8229f",
+        "status": "COMMITTED_CONVERTED",
+        "created_at": "2026-10-26T14:57:55.454949Z"
+      }
+    ],
+    "quotes": [
+      {
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "operation_id": "fe4386dc-b920-518e-a999-23578e1cea79",
+        "customer_email": "buyer1@example.test",
+        "line_items": [
+          {
+            "sku": "APL-001",
+            "qty": 3,
+            "unit_price": 125000
+          }
+        ],
+        "voided_by_op_id": null,
+        "voided_at": null,
+        "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+        "namespace": "live",
+        "total_amount": 375000,
+        "status": "SENT",
+        "created_at": "2026-10-26T14:57:55.472903Z"
+      }
+    ],
+    "emails": [
+      {
+        "email_id": "340ce164-2134-485f-b27a-ec4c852366a4",
+        "run_id": "0449a350-a96f-467b-8e6e-bf2cc3aad710",
+        "quote_id": "b248cc04-ffba-4105-a28d-f33d60ff5b79",
+        "body_summary": "{\"currency\":\"INR\",\"line_items\":[{\"qty\":3,\"sku\":\"APL-001\",\"unit_price\":125000}],\"quote_id\":\"b248cc04-ffba-4105-a28d-f33d60ff5b79\",\"recipient\":\"buyer1@example.test\",\"total_amount\":375000}",
+        "namespace": "live",
+        "operation_id": "d92e858e-296d-5402-bab1-4b283dab8ef6",
+        "recipient": "buyer1@example.test",
+        "bound_state_hash": "4bbe9351181bf9c29b549472b03e140bd34cee1a983b1cc3f2f5858aa079a4c7",
+        "sent_at": "2026-10-26T14:57:55.646826Z"
+      }
+    ]
+  }
+}

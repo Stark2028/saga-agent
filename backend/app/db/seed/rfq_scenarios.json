@@ -1,0 +1,142 @@
+[
+  {
+    "scenario_id": "rfq_01",
+    "customer_name": "Business 1",
+    "customer_email": "buyer1@example.test",
+    "raw_request": "3 x APL-001",
+    "revised_raw_request": "7 x APL-001"
+  },
+  {
+    "scenario_id": "rfq_02",
+    "customer_name": "Business 2",
+    "customer_email": "buyer2@example.test",
+    "raw_request": "4 x APL-002",
+    "revised_raw_request": "8 x APL-002"
+  },
+  {
+    "scenario_id": "rfq_03",
+    "customer_name": "Business 3",
+    "customer_email": "buyer3@example.test",
+    "raw_request": "5 x APL-003",
+    "revised_raw_request": "9 x APL-003"
+  },
+  {
+    "scenario_id": "rfq_04",
+    "customer_name": "Business 4",
+    "customer_email": "buyer4@example.test",
+    "raw_request": "6 x APL-004",
+    "revised_raw_request": "10 x APL-004"
+  },
+  {
+    "scenario_id": "rfq_05",
+    "customer_name": "Business 5",
+    "customer_email": "buyer5@example.test",
+    "raw_request": "7 x APL-005",
+    "revised_raw_request": "11 x APL-005"
+  },
+  {
+    "scenario_id": "rfq_06",
+    "customer_name": "Business 6",
+    "customer_email": "buyer6@example.test",
+    "raw_request": "8 x APL-006",
+    "revised_raw_request": "12 x APL-006"
+  },
+  {
+    "scenario_id": "rfq_07",
+    "customer_name": "Business 7",
+    "customer_email": "buyer7@example.test",
+    "raw_request": "9 x APL-007",
+    "revised_raw_request": "13 x APL-007"
+  },
+  {
+    "scenario_id": "rfq_08",
+    "customer_name": "Business 8",
+    "customer_email": "buyer8@example.test",
+    "raw_request": "10 x APL-008",
+    "revised_raw_request": "14 x APL-008"
+  },
+  {
+    "scenario_id": "rfq_09",
+    "customer_name": "Business 9",
+    "customer_email": "buyer9@example.test",
+    "raw_request": "2 x APL-009",
+    "revised_raw_request": "6 x APL-009"
+  },
+  {
+    "scenario_id": "rfq_10",
+    "customer_name": "Business 10",
+    "customer_email": "buyer10@example.test",
+    "raw_request": "3 x APL-010",
+    "revised_raw_request": "7 x APL-010"
+  },
+  {
+    "scenario_id": "rfq_11",
+    "customer_name": "Business 11",
+    "customer_email": "buyer11@example.test",
+    "raw_request": "4 x APL-011",
+    "revised_raw_request": "8 x APL-011"
+  },
+  {
+    "scenario_id": "rfq_12",
+    "customer_name": "Business 12",
+    "customer_email": "buyer12@example.test",
+    "raw_request": "5 x APL-012",
+    "revised_raw_request": "9 x APL-012"
+  },
+  {
+    "scenario_id": "rfq_13",
+    "customer_name": "Business 13",
+    "customer_email": "buyer13@example.test",
+    "raw_request": "6 x APL-013",
+    "revised_raw_request": "10 x APL-013"
+  },
+  {
+    "scenario_id": "rfq_14",
+    "customer_name": "Business 14",
+    "customer_email": "buyer14@example.test",
+    "raw_request": "7 x APL-014",
+    "revised_raw_request": "11 x APL-014"
+  },
+  {
+    "scenario_id": "rfq_15",
+    "customer_name": "Business 15",
+    "customer_email": "buyer15@example.test",
+    "raw_request": "8 x APL-015",
+    "revised_raw_request": "12 x APL-015"
+  },
+  {
+    "scenario_id": "rfq_16",
+    "customer_name": "Business 16",
+    "customer_email": "buyer16@example.test",
+    "raw_request": "9 x APL-016",
+    "revised_raw_request": "13 x APL-016"
+  },
+  {
+    "scenario_id": "rfq_17",
+    "customer_name": "Business 17",
+    "customer_email": "buyer17@example.test",
+    "raw_request": "10 x APL-017",
+    "revised_raw_request": "14 x APL-017"
+  },
+  {
+    "scenario_id": "rfq_18",
+    "customer_name": "Business 18",
+    "customer_email": "buyer18@example.test",
+    "raw_request": "2 x APL-018",
+    "revised_raw_request": "6 x APL-018"
+  },
+  {
+    "scenario_id": "rfq_19",
+    "customer_name": "Business 19",
+    "customer_email": "buyer19@example.test",
+    "raw_request": "3 x APL-019",
+    "revised_raw_request": "7 x APL-019"
+  },
+  {
+    "scenario_id": "rfq_20",
+    "customer_name": "Business 20",
+    "customer_email": "buyer20@example.test",
+    "raw_request": "4 x APL-020",
+    "revised_raw_request": "8 x APL-020"
+  }
+]

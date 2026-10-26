@@ -1,0 +1,392 @@
+[
+  {
+    "sku": "APL-001",
+    "name": "Aplus laptop 1",
+    "category": "laptop",
+    "unit_price": 125000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-002",
+    "name": "Aplus monitor 2",
+    "category": "monitor",
+    "unit_price": 150000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-003",
+    "name": "Aplus keyboard 3",
+    "category": "keyboard",
+    "unit_price": 175000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-004",
+    "name": "Aplus dock 4",
+    "category": "dock",
+    "unit_price": 200000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-005",
+    "name": "Aplus headset 5",
+    "category": "headset",
+    "unit_price": 225000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-006",
+    "name": "Aplus laptop 6",
+    "category": "laptop",
+    "unit_price": 250000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-007",
+    "name": "Aplus monitor 7",
+    "category": "monitor",
+    "unit_price": 275000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-008",
+    "name": "Aplus keyboard 8",
+    "category": "keyboard",
+    "unit_price": 300000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-009",
+    "name": "Aplus dock 9",
+    "category": "dock",
+    "unit_price": 325000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-010",
+    "name": "Aplus headset 10",
+    "category": "headset",
+    "unit_price": 350000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-011",
+    "name": "Aplus laptop 11",
+    "category": "laptop",
+    "unit_price": 375000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-012",
+    "name": "Aplus monitor 12",
+    "category": "monitor",
+    "unit_price": 400000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-013",
+    "name": "Aplus keyboard 13",
+    "category": "keyboard",
+    "unit_price": 425000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-014",
+    "name": "Aplus dock 14",
+    "category": "dock",
+    "unit_price": 450000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-015",
+    "name": "Aplus headset 15",
+    "category": "headset",
+    "unit_price": 475000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-016",
+    "name": "Aplus laptop 16",
+    "category": "laptop",
+    "unit_price": 500000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-017",
+    "name": "Aplus monitor 17",
+    "category": "monitor",
+    "unit_price": 525000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-018",
+    "name": "Aplus keyboard 18",
+    "category": "keyboard",
+    "unit_price": 550000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-019",
+    "name": "Aplus dock 19",
+    "category": "dock",
+    "unit_price": 575000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-020",
+    "name": "Aplus headset 20",
+    "category": "headset",
+    "unit_price": 600000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-021",
+    "name": "Aplus laptop 21",
+    "category": "laptop",
+    "unit_price": 625000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-022",
+    "name": "Aplus monitor 22",
+    "category": "monitor",
+    "unit_price": 650000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-023",
+    "name": "Aplus keyboard 23",
+    "category": "keyboard",
+    "unit_price": 675000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-024",
+    "name": "Aplus dock 24",
+    "category": "dock",
+    "unit_price": 700000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-025",
+    "name": "Aplus headset 25",
+    "category": "headset",
+    "unit_price": 725000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-026",
+    "name": "Aplus laptop 26",
+    "category": "laptop",
+    "unit_price": 750000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-027",
+    "name": "Aplus monitor 27",
+    "category": "monitor",
+    "unit_price": 775000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-028",
+    "name": "Aplus keyboard 28",
+    "category": "keyboard",
+    "unit_price": 800000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-029",
+    "name": "Aplus dock 29",
+    "category": "dock",
+    "unit_price": 825000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  },
+  {
+    "sku": "APL-030",
+    "name": "Aplus headset 30",
+    "category": "headset",
+    "unit_price": 850000,
+    "available_qty": 1000,
+    "reserved_qty": 0,
+    "fulfilled_qty": 0,
+    "specs": {
+      "interface": "USB-C",
+      "currency": "INR"
+    }
+  }
+]

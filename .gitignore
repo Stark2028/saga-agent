@@ -1,0 +1,42 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.db-shm
+*.db-wal
+.env
+backend/*.egg-info/
+backend/.test-tmp*/
+backend/.benchmark-runs/
+.ruff_cache/
+frontend/node_modules/
+frontend/dist/
+frontend/.npm-cache/
+frontend/.env.local
+frontend/test-results/
+frontend/playwright-report/
+
+# Local configuration and credentials (example templates are intentionally tracked).
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+
+# Generated test output and platform clutter.
+backend/pytest-cache-files-*/
+backend/pytest-results.xml
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Personal documents sharing this workspace are not part of SagaAgent.
+/Amazon*
+/Sameer_Prasad_Amazon.pdf
+/FULL_REPO_AUDIT.txt
+
+# Local assistant handoff contains machine paths and execution history.
+/MEMORY.md

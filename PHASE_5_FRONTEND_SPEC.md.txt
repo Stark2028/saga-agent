@@ -1,0 +1,68 @@
+# PHASE_5_FRONTEND_SPEC.md — SagaAgent Trace & Chaos Studio (Frontend Handoff)
+
+## 1. Objective & Scope
+Build the Phase 5 frontend (`frontend/`) for **SagaAgent** strictly adhering to the generated schemas in `MEMORY.md` (`backend/response-schemas.json` and `backend/openapi.json`), while preserving all existing backend behavior and tests.
+
+### 1.1 Backend Compatibility Checks (Minimal & Non-Breaking)
+Before or during frontend wiring, verify two small integration details in `backend/`:
+1. **CORS Middleware (`backend/app/main.py`):** Ensure `CORSMiddleware` allows `http://localhost:3000` and `http://127.0.0.1:3000` (all methods and headers, including `Authorization`).
+2. **Crash `503` Run ID Discovery:** When `POST /api/runs` or `POST /api/chaos/scenarios/{scenario_id}` triggers an injected worker crash and returns `503 Service Unavailable` (`ErrorResponse`), verify that `error.details` includes `{"run_id": "<uuid>"}`. If a `503` response contains `details[0].run_id`, the frontend must automatically extract `run_id` and immediately fetch `GET /api/runs/{run_id}/trace` so the operator can inspect the crashed mid-flight state and click **"Resume Run"**. (If `details` does not yet include `run_id` on `503`, ensure it is populated without breaking any of the 59 existing tests).
+
+---
+
+## 2. Frontend Tech Stack & Structure (`frontend/`)
+Use **Next.js (App Router, TypeScript, Tailwind CSS, Lucide React)** or **Vite + React + TypeScript + Tailwind CSS** (whichever builds and verifies cleanest in the local environment without external network blockers).
+
+```text
+frontend/
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── types/
+│   │   └── saga.ts                 # Exact TypeScript interfaces from MEMORY.md schemas
+│   ├── lib/
+│   │   ├── api.ts                  # Typed HTTP client handling 200/201 + 4xx/503 ErrorResponse
+│   │   └── format.ts               # Integer INR paise -> ₹ formatter & hash truncation helpers
+│   ├── components/
+│   │   ├── ScenarioLauncher.tsx    # Preset RFQ selector, custom SKU line input ("10 x APL-001"), ChaosConfig toggles, and 1-click Chaos Scenario buttons
+│   │   ├── RunHeaderBar.tsx        # Displays RunStatus badge, ExecutionMode (LIVE vs SANDBOX), version, active_revision_no, lease status, and Resume button
+│   │   ├── StepTracePipeline.tsx   # Visual DAG / step pipeline (Steps 0..5) grouped by revision_no, showing StepStatus, CompensationStatus, attempts, and reconcile_polls
+│   │   ├── StepInspectorDrawer.tsx # Shows operation_id, verification_evidence, compensation_evidence, input/output payloads, and AttemptResponse timeline
+│   │   ├── ApprovalGateCard.tsx    # Shows bound_state_hash, frozen_dispatch_payload (formatted from paise), reviewer_id + Bearer token selector, Approve/Reject buttons, and "Revise Customer RFQ" mutation trigger
+│   │   ├── SandboxForkPanel.tsx    # Allows forking from BEFORE_STEP 0..3 with optional override_plan; displays parent_run_id and source_record_map
+│   │   ├── ExternalStateTables.tsx # Live tabs for external_records: Stock (available/reserved/fulfilled), Holds (ACTIVE/RELEASED/COMMITTED_CONVERTED), Quotes (DRAFT/VOIDED/SENT), and Dispatched Emails
+│   │   └── BenchmarkScorecard.tsx  # Renders GET /api/chaos/benchmarks (Seed 20261026, 200 executions, Cohorts A–E comparison table)
+│   └── app/ (or pages/)
+│       └── page.tsx                # Unified single-screen Operator & Chaos Studio
+```
+
+---
+
+## 3. Exact Schema & Domain Rules to Enforce in the UI
+
+1. **Exact TypeScript Types (`src/types/saga.ts`):**
+   - Must match `RunTraceResponse`, `RunResponse`, `RevisionResponse`, `StepResponse`, `ApprovalResponse`, `AttemptResponse`, `ExternalRecords`, `StockResponse`, `HoldResponse`, `QuoteResponse`, `EmailResponse`, `BenchmarkResponse`, `ChaosConfig`, and `ErrorResponse` from `MEMORY.md` with zero `any` types on required fields.
+2. **Monetary Formatting (Paise Integer Contract):**
+   - All backend monetary amounts (`unit_price`, `total_amount`, plan totals) are integer INR paise.
+   - Display formatted currency (`(paise / 100).toLocaleString('en-IN', { style: 'currency', currency: 'INR' })`) alongside the raw paise integer in technical tooltips/JSON views.
+3. **Planner Input Format:**
+   - Default the custom run form and RFQ revision input to valid explicit SKU/quantity lines matching the deterministic planner (e.g., `"10 x APL-001, 2 x APL-002"` or seeded SKUs from `catalogue.json`), and provide a dropdown of pre-configured RFQ scenarios so the user never accidentally triggers a `422` unless testing validation errors.
+4. **Reviewer Authentication (`HTTPBearer`):**
+   - Inspect `backend/app/config.py` for the configured reviewer token map.
+   - In `ApprovalGateCard.tsx`, pre-populate a Reviewer Identity / Bearer Token selector with the valid configured reviewer ID and token (plus an "Invalid Token (Test 401/403)" option so the user can demo authentication rejection in the UI).
+   - Pass `Authorization: Bearer <token>` on `/approve` and `/reject` requests.
+5. **Interactive Walkthroughs for All 5 Core Scenarios:**
+   - Provide 5 prominent **"Run Guided Scenario"** buttons in the top studio bar (using `POST /api/chaos/scenarios/{scenario_id}` or `POST /api/runs` with preset `ChaosConfig`):
+     1. **Scenario 1 (Lost CRM Write Response):** Triggers `drop_response_after_write_on_step=2` -> displays step in `OUTCOME_UNKNOWN` / `RECONCILING` -> user clicks **Resume / Reconcile** -> `verify()` resolves to `COMMITTED` with 1 quote in `ExternalStateTables`.
+     2. **Scenario 2 (Mid-Flight Worker Crash):** Triggers crash (`503`) -> UI catches `503`, loads trace via `run_id`, highlights crashed state -> user clicks **Resume** -> recovers cleanly.
+     3. **Scenario 3A & 3B (Rejection Rollback & Compensation Failure):** Reaches `AWAITING_APPROVAL` -> user clicks **Reject** (with optional `fail_compensation_on_step=1` toggle) -> shows either clean `COMPENSATED_HALTED` or `FAILED_NEEDS_HUMAN` with uncompensated `hold_id` surfaced in `error_summary`.
+     4. **Scenario 4 (Post-Approval Customer RFQ Revision):** Reaches `AWAITING_APPROVAL` -> user approves (`auto_execute_dispatch: false`) -> user clicks **Revise RFQ** with updated quantities -> shows Revision 1 approval marked `INVALIDATED_STALE`, Revision 1 steps `COMPENSATED`, and Revision 2 awaiting fresh approval bound to the new `state_hash`.
+     5. **Scenario 5 (Historical Sandbox Fork):** On any run, user selects `from_step_index` (0–3) and clicks **Fork to Sandbox** -> switches view to the new `SANDBOX` run (`sandbox_<id>`), showing `source_record_map` and isolated sandbox tables.
+
+---
+
+## 4. Verification & Handoff Requirements for Codex
+1. Implement `frontend/` and any required CORS/run_id-in-503 helper in `backend/`.
+2. Re-run the backend test suite (`pytest -q -W error`) to confirm all 59+ backend tests still pass with 0 warnings.
+3. Run frontend typecheck (`npx tsc --noEmit`), lint, and production build (`npm run build`), plus an automated frontend/integration test verifying the UI components render and interact with the API contract.
+4. Update `TODO.md`, `MEMORY.md`, `BUGS.md`, and `README.md` with exact PowerShell startup commands for running Backend + Frontend side-by-side.

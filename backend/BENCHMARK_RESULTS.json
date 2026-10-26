@@ -1,0 +1,42 @@
+{
+  "seed": 20261026,
+  "cases_per_runner": 100,
+  "total_executions": 200,
+  "metrics": [
+    {
+      "cohort": "A",
+      "metric": "duplicate_crm_quotes_created",
+      "denominator": 20,
+      "saga": 0,
+      "naive": 20
+    },
+    {
+      "cohort": "B",
+      "metric": "clean_recovery_without_duplicate_holds",
+      "denominator": 20,
+      "saga": 20,
+      "naive": 0
+    },
+    {
+      "cohort": "C",
+      "metric": "orphaned_active_inventory_holds",
+      "denominator": 20,
+      "saga": 0,
+      "naive": 20
+    },
+    {
+      "cohort": "D",
+      "metric": "accurately_halted_in_failed_needs_human_with_uncompensated_id",
+      "denominator": 20,
+      "saga": 20,
+      "naive": 0
+    },
+    {
+      "cohort": "E",
+      "metric": "stale_emails_dispatched",
+      "denominator": 20,
+      "saga": 0,
+      "naive": 20
+    }
+  ]
+}
