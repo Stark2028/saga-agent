@@ -2,6 +2,11 @@
 
 **A goal-driven quotation worker with durable execution, verified recovery, and human approval.**
 
+**[Live demo on AWS](https://saga.65.0.103.235.sslip.io)** · Password-protected; [request demo access by email](mailto:sameerprasad2000@gmail.com?subject=SagaAgent%20demo%20access).
+
+The hosted demo uses simulated business providers. Access includes shared task and
+chaos controls, so the demo password is shared privately.
+
 [![CI](https://github.com/Stark2028/saga-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Stark2028/saga-agent/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
